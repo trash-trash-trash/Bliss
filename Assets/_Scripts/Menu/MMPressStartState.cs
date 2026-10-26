@@ -5,6 +5,7 @@ public class MMPressStartState : MainMenuStateBase
     public override void OnEnable()
     {
         base.OnEnable();
+        brain.backButton.gameObject.SetActive(false);
         PlayerControls.Instance.AnnounceAnyKeyPressedReleased += ChangeState;
     }
 

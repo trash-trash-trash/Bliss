@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
         PlayerControls.Instance.AnnounceMove += OnMove;
     }
 
-
     void OnMove(Vector2 input)
     {
         moveInput = input;
@@ -28,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleMovement()
     {
-        Vector3 movement = new Vector3(moveInput.x, 0f, moveInput.y);
+        Vector3 movement = transform.right * moveInput.x
+                           + transform.forward * moveInput.y;
 
         if (characterController.isGrounded && verticalVelocity < 0f)
             verticalVelocity = -2f;
@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
         characterController.Move(movement * moveSpeed * Time.deltaTime);
     }
-
 
     void OnDisable()
     {

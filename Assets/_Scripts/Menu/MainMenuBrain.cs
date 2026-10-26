@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public enum MainMenuStates
@@ -32,6 +33,8 @@ public class MainMenuBrain : MonoBehaviour
     private GameObject prevObj;
 
     public Dictionary<MainMenuStates, GameObject> stateDict = new Dictionary<MainMenuStates, GameObject>();
+
+    public Button backButton;
 
     void Start()
     {

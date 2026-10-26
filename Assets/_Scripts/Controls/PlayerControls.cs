@@ -13,6 +13,8 @@ public class PlayerControls : MonoBehaviour
 
     public event Action<Vector2> AnnounceMouseLook;
 
+    public event Action<bool> AnnounceLeftClick;
+
     void Awake()
     {
         Instance = this;
@@ -31,7 +33,18 @@ public class PlayerControls : MonoBehaviour
         inputActions.ActionMap.MouseLook.performed += MouseLook;
         inputActions.ActionMap.MouseLook.canceled += MouseLook;
 
+        inputActions.ActionMap.LeftClick.performed += LeftClick;
+        inputActions.ActionMap.LeftClick.canceled += LeftClick;
+
         inputActions.Enable();
+    }
+
+    private void LeftClick(InputAction.CallbackContext input)
+    {
+        if(input.performed)
+            AnnounceLeftClick?.Invoke(true);
+        else if (input.canceled)
+            AnnounceLeftClick?.Invoke(false);   
     }
 
 

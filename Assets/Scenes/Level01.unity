@@ -459,7 +459,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5173,13 +5173,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725213243}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15984085, y: -0.17458287, z: -0.02873426, w: 0.9711571}
-  m_LocalPosition: {x: 5.23, y: 0.70000005, z: 7.38}
+  m_LocalRotation: {x: 0, y: -0.04065501, z: 0, w: 0.9991733}
+  m_LocalPosition: {x: 1.74, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 184454576}
-  m_LocalEulerAnglesHint: {x: -18.693, y: -20.382, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -4.66, z: 0}
 --- !u!114 &725213247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5208,6 +5208,7 @@ GameObject:
   - component: {fileID: 807478236}
   - component: {fileID: 807478235}
   - component: {fileID: 807478238}
+  - component: {fileID: 807478239}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -5309,8 +5310,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MouseLook
   mouseDelta: {x: 0, y: 0}
   playerHead: {fileID: 184454576}
+  body: {fileID: 807478233}
   horizontalSensitivity: 0.01
   verticalSensitivity: 0.01
+--- !u!114 &807478239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807478230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b70b94131e1f04a96492abd1a02999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
+  part: {fileID: 725213245}
 --- !u!1 &1013584283
 GameObject:
   m_ObjectHideFlags: 0

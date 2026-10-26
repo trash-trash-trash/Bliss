@@ -4,12 +4,12 @@ public class MouseLook : MonoBehaviour
 {
     public Vector2 mouseDelta;
     public Transform playerHead;
+    public Transform body;
 
     public float horizontalSensitivity = 0.1f;
     public float verticalSensitivity = 0.1f;
     private float cameraPitch;
     private float cameraYaw;
-
 
     void Start()
     {
@@ -39,7 +39,8 @@ public class MouseLook : MonoBehaviour
 
         cameraPitch = Mathf.Clamp(cameraPitch, -90f, 90f);
 
-        playerHead.localRotation = Quaternion.Euler(cameraPitch, cameraYaw, 0f);
+        body.localRotation = Quaternion.Euler(0f, cameraYaw, 0f);
+        playerHead.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
     }
 
     void OnDisable()
